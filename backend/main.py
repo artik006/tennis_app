@@ -12,7 +12,8 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from routers import auth, users, news, training, stats
+# 🔥 ВАЖНО: правильный импорт для Render
+from backend.routers import auth, users, news, training, stats
 
 app = FastAPI(title="Tennis Web App")
 

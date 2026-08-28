@@ -15,27 +15,24 @@
         body {
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
-        .brand {
+        .brand-script {
             font-family: 'Playfair Display', serif;
         }
     </style>
 </head>
-
 <body class="bg-slate-950 text-slate-100">
 
     <!-- Шапка -->
     <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur">
         <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-
-            <!-- Логотип -->
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-xl bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.7)] flex items-center justify-center text-slate-900 font-bold">
                     ЭК
                 </div>
-
                 <div>
-                    <div class="brand text-3xl md:text-4xl italic font-semibold tracking-tight leading-none">
-                        ЭлитА Корта
+                    <div class="text-2xl md:text-3xl font-semibold tracking-tight leading-none">
+                        элит<span class="brand-script italic text-3xl md:text-4xl">А</span> 
+                        К<span class="brand-script italic text-3xl md:text-4xl">орта</span>
                     </div>
                     <div class="text-xs text-slate-400 mt-1">
                         Персональные и групповые тренировки по теннису
@@ -43,7 +40,6 @@
                 </div>
             </div>
 
-            <!-- Навигация -->
             <nav class="hidden md:flex gap-6 text-sm">
                 <a href="#" class="text-slate-300 hover:text-emerald-400 transition">Главная</a>
                 <a href="#trainings" class="text-slate-300 hover:text-emerald-400 transition">Тренировки</a>
@@ -60,13 +56,10 @@
     <!-- Hero-блок -->
     <section class="max-w-6xl mx-auto px-4 pt-10 pb-8">
         <div class="grid md:grid-cols-2 gap-10 items-center">
-
-            <!-- Текст -->
             <div>
                 <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
                     «ЭлитА Корта» — современный подход к теннису
                 </h1>
-
                 <p class="text-slate-300 mb-6">
                     Персональные и групповые тренировки, подготовка к турнирам, развитие техники, тактики и психологии.
                     Запишитесь онлайн — быстро, удобно и без лишних звонков.
@@ -97,7 +90,7 @@
                 </div>
             </div>
 
-            <!-- Блок с фото (исправленный, красивый, как первый вариант) -->
+            <!-- Блок с фото -->
             <div class="relative">
                 <div class="absolute -inset-10 bg-emerald-500/10 blur-3xl rounded-full"></div>
 
@@ -112,7 +105,6 @@
 
                     <!-- Две маленькие справа -->
                     <div class="flex flex-col gap-4">
-
                         <div class="w-full h-32 rounded-xl overflow-hidden border border-slate-800">
                             <img src="/static/img/photo2.jpeg.jpg"
                                  alt="Теннис"
@@ -124,13 +116,120 @@
                                  alt="Теннис"
                                  class="w-full h-full object-cover object-center">
                         </div>
-
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок тренировок -->
+    <section id="trainings" class="max-w-6xl mx-auto px-4 py-8">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-semibold">Форматы тренировок</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Индивидуальные -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg">
+                <div class="text-sm font-semibold text-emerald-400 mb-1">Индивидуальные</div>
+                <div class="text-base font-semibold mb-2">Персональная тренировка</div>
+                <p class="text-sm text-slate-300 mb-3">
+                    Максимальное внимание тренера, работа над техникой, тактикой и психологией.
+                </p>
+                <div class="text-xs text-slate-400 mb-3">
+                    Длительность: 60–90 минут
+                </div>
+                <button class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-2 rounded-xl shadow-[0_0_16px_rgba(16,185,129,0.8)] transition">
+                    Записаться
+                </button>
+            </div>
+
+            <!-- Групповые -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg">
+                <div class="text-sm font-semibold text-emerald-400 mb-1">Групповые</div>
+                <div class="text-base font-semibold mb-2">Тренировка в группе</div>
+                <p class="text-sm text-slate-300 mb-3">
+                    Работа в группе 4–8 человек, игровые упражнения, спарринги, развитие соревновательных навыков.
+                </p>
+                <div class="text-xs text-slate-400 mb-3">
+                    Длительность: 90 минут
+                </div>
+                <button class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-2 rounded-xl shadow-[0_0_16px_rgba(16,185,129,0.8)] transition">
+                    Записаться
+                </button>
+            </div>
+
+            <!-- Детские -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg">
+                <div class="text-sm font-semibold text-emerald-400 mb-1">Детские</div>
+                <div class="text-base font-semibold mb-2">Тренировка для детей</div>
+                <p class="text-sm text-slate-300 mb-3">
+                    Развитие моторики, техники, игровой практики. Подходит для детей 6–14 лет.
+                </p>
+                <div class="text-xs text-slate-400 mb-3">
+                    Длительность: 60 минут
+                </div>
+                <button class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-2 rounded-xl shadow-[0_0_16px_rgba(16,185,129,0.8)] transition">
+                    Записаться
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Новости -->
+    <section id="news" class="max-w-6xl mx-auto px-4 py-10">
+        <h2 class="text-xl font-semibold mb-6">Новости</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+                <img src="/static/img/news1.jpg" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <div class="text-lg font-semibold mb-2">Открыт набор на осенний сезон</div>
+                    <p class="text-sm text-slate-300">
+                        Формируются группы для детей и взрослых. Индивидуальные тренировки также доступны.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+                <img src="/static/img/news2.jpg" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <div class="text-lg font-semibold mb-2">Новый тренер в команде</div>
+                    <p class="text-sm text-slate-300">
+                        К нам присоединился опытный тренер с международной практикой.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
+                <img src="/static/img/news3.jpg" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <div class="text-lg font-semibold mb-2">Турнир среди учеников</div>
+                    <p class="text-sm text-slate-300">
+                        В конце месяца пройдёт внутренний турнир. Участвуют все уровни подготовки.
+                    </p>
                 </div>
             </div>
 
         </div>
     </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="max-w-6xl mx-auto px-4 py-10">
+        <h2 class="text-xl font-semibold mb-4">Контакты</h2>
+
+        <p class="text-slate-300 mb-2">Телефон: +375 (29) 123‑45‑67</p>
+        <p class="text-slate-300 mb-2">Адрес: г. Пинск, теннисный центр</p>
+        <p class="text-slate-300">Instagram: @elite_court</p>
+    </section>
+
+    <!-- Футер -->
+    <footer class="border-t border-slate-800 bg-slate-900/80 backdrop-blur py-6 text-center text-sm text-slate-400">
+        © 2026 ЭлитА Корта — Все права защищены
+    </footer>
 
 </body>
 </html>

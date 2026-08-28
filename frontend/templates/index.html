@@ -83,37 +83,38 @@
             </div>
 
             <!-- Блок с твоими фото -->
-           <div class="relative">
+         <div class="relative">
     <div class="absolute -inset-10 bg-emerald-500/10 blur-3xl rounded-full"></div>
 
     <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl">
 
-        <!-- Фото №1 — большое -->
-        <div class="w-full rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+        <!-- Фото №1 — одинаковая высота, без обрезания -->
+        <div class="w-full aspect-[4/3] rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
             <img src="/static/img/photo1.jpeg.jpg"
                  alt="Теннис"
-                 class="w-full h-auto object-contain">
+                 class="w-full h-full object-contain">
         </div>
 
         <div class="flex gap-3 mt-4">
 
             <!-- Фото №2 -->
-            <div class="w-1/2 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+            <div class="w-1/2 aspect-[4/3] rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
                 <img src="/static/img/photo2.jpeg.jpg"
                      alt="Теннис"
-                     class="w-full h-auto object-contain">
+                     class="w-full h-full object-contain">
             </div>
 
             <!-- Фото №3 -->
-            <div class="w-1/2 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+            <div class="w-1/2 aspect-[4/3] rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
                 <img src="/static/img/photo3.jpeg.jpg"
                      alt="Теннис"
-                     class="w-full h-auto object-contain">
+                     class="w-full h-full object-contain">
             </div>
 
         </div>
     </div>
 </div>
+
 
     </section>
 

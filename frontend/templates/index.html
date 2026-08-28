@@ -2,105 +2,263 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Tennis Web App</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <title>Теннис-лига | Запись на тренировки</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Доп шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+    </style>
 </head>
+<body class="bg-slate-950 text-slate-100">
 
-<body>
-
-    <!-- HERO -->
-    <div class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Tennis Web App</h1>
-            <p>Новости, турниры, рейтинги и аналитика — всё в одном месте</p>
-        </div>
-    </div>
-
-    <div class="content">
-
-        <!-- Новости -->
-        <div class="section-title">Последние новости</div>
-
-        <div class="news-grid">
-
-            <div class="news-card">
-                <img src="/static/img/news1.jpg">
-                <div class="news-text">
-                    <h3>Мирра Андреева сыграет на турнире в Сингапуре</h3>
-                    <p>Юная звезда продолжает удивлять теннисный мир.</p>
+    <!-- Шапка -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.7)] flex items-center justify-center text-slate-900 font-bold">
+                    T
+                </div>
+                <div>
+                    <div class="text-lg font-semibold tracking-tight">Теннис-лига</div>
+                    <div class="text-xs text-slate-400">Запись на тренировки и турниры</div>
                 </div>
             </div>
 
-            <div class="news-card">
-                <img src="/static/img/news2.jpg">
-                <div class="news-text">
-                    <h3>Wilson и Арина Соболенко представили новую ракетку</h3>
-                    <p>Модель создана под агрессивный стиль игры.</p>
+            <nav class="hidden md:flex gap-6 text-sm">
+                <a href="#" class="text-slate-300 hover:text-emerald-400 transition">Главная</a>
+                <a href="#trainings" class="text-slate-300 hover:text-emerald-400 transition">Тренировки</a>
+                <a href="#news" class="text-slate-300 hover:text-emerald-400 transition">Новости</a>
+                <a href="#contacts" class="text-slate-300 hover:text-emerald-400 transition">Контакты</a>
+            </nav>
+
+            <a href="#signup" class="hidden md:inline-flex bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold px-4 py-2 rounded-xl shadow-[0_0_18px_rgba(16,185,129,0.8)] transition">
+                Записаться
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero-блок -->
+    <section class="max-w-6xl mx-auto px-4 pt-10 pb-8">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+                    Индивидуальные и групповые тренировки по теннису
+                </h1>
+                <p class="text-slate-300 mb-6">
+                    Современный подход к подготовке игроков: техника, тактика, физика и психология.
+                    Запишись на тренировку онлайн — быстро и без звонков.
+                </p>
+
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <a href="#signup" class="bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold px-5 py-2.5 rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.8)] transition">
+                        Записаться на тренировку
+                    </a>
+                    <a href="#trainings" class="border border-slate-700 hover:border-emerald-500 text-slate-200 px-5 py-2.5 rounded-xl transition">
+                        Посмотреть расписание
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        Индивидуальные и групповые занятия
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        Подготовка к турнирам
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        Работа с детьми и взрослыми
+                    </div>
                 </div>
             </div>
 
-            <div class="news-card">
-                <img src="/static/img/news3.jpg">
-                <div class="news-text">
-                    <h3>Циципас рассказал о новой системе тренировок</h3>
-                    <p>Игрок стал «жаворонком» и перестроил режим.</p>
+            <div class="relative">
+                <div class="absolute -inset-10 bg-emerald-500/10 blur-3xl rounded-full"></div>
+                <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl">
+                    <img src="/static/img/news1.jpg" alt="Теннис" class="w-full h-56 object-cover rounded-xl mb-4 border border-slate-800">
+                    <div class="flex gap-3">
+                        <img src="/static/img/news2.jpg" alt="Теннис" class="w-1/2 h-32 object-cover rounded-xl border border-slate-800">
+                        <img src="/static/img/news3.jpg" alt="Теннис" class="w-1/2 h-32 object-cover rounded-xl border border-slate-800">
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- Блок тренировок -->
+    <section id="trainings" class="max-w-6xl mx-auto px-4 py-8">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-semibold">Форматы тренировок</h2>
         </div>
 
-        <!-- Турниры -->
-        <div class="section-title">Ближайшие турниры</div>
-
-        <div class="widget">
-            <h3>ATP 500 — Дубай</h3>
-            <p>Начало: 12 сентября</p>
-        </div>
-
-        <div class="widget">
-            <h3>WTA 250 — Токио</h3>
-            <p>Начало: 18 сентября</p>
-        </div>
-
-        <!-- Рейтинг игроков -->
-        <div class="section-title">Рейтинг игроков</div>
-
-        <div class="rating-widget">
-            <div class="rating-item">
-                <span class="pos">1</span>
-                <span class="name">Новак Джокович</span>
-                <span class="pts">8795 очков</span>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg">
+                <div class="text-sm font-semibold text-emerald-400 mb-1">Индивидуальные</div>
+                <div class="text-base font-semibold mb-2">Персональная тренировка</div>
+                <p class="text-sm text-slate-300 mb-3">
+                    Максимальное внимание тренера, работа над техникой, тактикой и психологией.
+                </p>
+                <div class="text-xs text-slate-400 mb-3">
+                    Длительность: 60–90 минут
+                </div>
+                <button class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-2 rounded-xl shadow-[0_0_16px_rgba(16,185,129,0.8)] transition">
+                    Записаться
+                </button>
             </div>
 
-            <div class="rating-item">
-                <span class="pos">2</span>
-                <span class="name">Карлос Алькарас</span>
-                <span class="pts">8650 очков</span>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg">
+                <div class="text-sm font-semibold text-emerald-400 mb-1">Групповые</div>
+                <div class="text-base font-semibold mb-2">Тренировка в группе</div>
+                <p class="text-sm text-slate-300 mb-3">
+                    Работа в группе 4–8 человек, игровые упражнения, спарринги, развитие соревновательных навыков.
+                </p>
+                <div class="text-xs text-slate-400 mb-3">
+                    Длительность: 90 минут
+                </div>
+                <button class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-2 rounded-xl shadow-[0_0_16px_rgba(16,185,129,0.8)] transition">
+                    Записаться
+                </button>
             </div>
 
-            <div class="rating-item">
-                <span class="pos">3</span>
-                <span class="name">Даниил Медведев</span>
-                <span class="pts">7590 очков</span>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg">
+                <div class="text-sm font-semibold text-emerald-400 mb-1">Турниры</div>
+                <div class="text-base font-semibold mb-2">Соревновательная подготовка</div>
+                <p class="text-sm text-slate-300 mb-3">
+                    Подготовка к турнирам: тактика, психология, разбор матчей, работа над ключевыми моментами.
+                </p>
+                <div class="text-xs text-slate-400 mb-3">
+                    Индивидуальный план
+                </div>
+                <button class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold py-2 rounded-xl shadow-[0_0_16px_rgba(16,185,129,0.8)] transition">
+                    Записаться
+                </button>
             </div>
         </div>
+    </section>
 
-        <!-- Советы тренера -->
-        <div class="section-title">Советы тренера</div>
-
-        <div class="tip-card">
-            <h3>Как улучшить подачу</h3>
-            <p>Следи за плечами, расслабляй кисть и работай над ритмом.</p>
+    <!-- Новости -->
+    <section id="news" class="max-w-6xl mx-auto px-4 py-8">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-semibold">Новости и обновления</h2>
         </div>
 
-        <div class="tip-card">
-            <h3>Идеальная разминка</h3>
-            <p>5 минут бега, растяжка ног, вращения корпуса и работа с мячом.</p>
-        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <article class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg">
+                <div class="text-xs text-slate-400 mb-1">Новая группа</div>
+                <div class="text-sm font-semibold mb-2">Запуск группы для начинающих</div>
+                <p class="text-xs text-slate-300">
+                    Открыта запись в новую группу для игроков начального уровня. Удобное расписание и базовая техника.
+                </p>
+            </article>
 
-    </div>
+            <article class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg">
+                <div class="text-xs text-slate-400 mb-1">Турнир</div>
+                <div class="text-sm font-semibold mb-2">Клубный турнир в выходные</div>
+                <p class="text-xs text-slate-300">
+                    В ближайшие выходные пройдёт внутренний турнир клуба. Регистрация доступна онлайн.
+                </p>
+            </article>
+
+            <article class="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-lg">
+                <div class="text-xs text-slate-400 mb-1">Обновление</div>
+                <div class="text-sm font-semibold mb-2">Новый формат тренировок</div>
+                <p class="text-xs text-slate-300">
+                    Добавлен формат комбинированных тренировок: техника + физика + игровая практика в одном занятии.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Форма записи -->
+    <section id="signup" class="max-w-6xl mx-auto px-4 py-8">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+            <h2 class="text-xl font-semibold mb-3">Записаться на тренировку</h2>
+            <p class="text-sm text-slate-300 mb-4">
+                Оставьте свои данные, и тренер свяжется с вами для подтверждения времени и формата занятия.
+            </p>
+
+            <form class="grid md:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-1">
+                    <label class="text-xs text-slate-300">Имя</label>
+                    <input type="text" class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="Введите имя">
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label class="text-xs text-slate-300">Телефон</label>
+                    <input type="text" class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" placeholder="+375...">
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label class="text-xs text-slate-300">Уровень</label>
+                    <select class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-emerald-500">
+                        <option>Начальный</option>
+                        <option>Средний</option>
+                        <option>Продвинутый</option>
+                    </select>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label class="text-xs text-slate-300">Формат</label>
+                    <select class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-emerald-500">
+                        <option>Индивидуальная тренировка</option>
+                        <option>Групповая тренировка</option>
+                        <option>Подготовка к турниру</option>
+                    </select>
+                </div>
+                <div class="md:col-span-2 flex flex-col gap-1">
+                    <label class="text-xs text-slate-300">Комментарий</label>
+                    <textarea class="bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-emerald-500" rows="3" placeholder="Удобное время, пожелания, вопросы"></textarea>
+                </div>
+                <div class="md:col-span-2 flex justify-end">
+                    <button type="submit" class="bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-semibold px-6 py-2.5 rounded-xl shadow-[0_0_18px_rgba(16,185,129,0.8)] transition">
+                        Отправить заявку
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="max-w-6xl mx-auto px-4 py-8">
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h2 class="text-xl font-semibold mb-3">Контакты</h2>
+                <p class="text-sm text-slate-300 mb-2">
+                    Тренер-преподаватель по теннису. Индивидуальные и групповые занятия.
+                </p>
+                <div class="text-sm text-slate-300">
+                    Телефон: <span class="text-emerald-400">+375 (XX) XXX-XX-XX</span><br>
+                    Telegram: <span class="text-emerald-400">@your_tg</span><br>
+                    Город: <span class="text-emerald-400">Пинск</span>
+                </div>
+            </div>
+            <div class="text-sm text-slate-400">
+                <p class="mb-2">
+                    Если вы хотите изменить дизайн, цвета, шрифты или структуру — это можно сделать очень быстро,
+                    просто изменяя классы Tailwind в этом файле.
+                </p>
+                <p>
+                    Ты можешь спокойно экспериментировать: менять фон, делать неон, добавлять анимации — всё через классы,
+                    без сложных CSS.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="border-t border-slate-800 mt-8">
+        <div class="max-w-6xl mx-auto px-4 py-4 text-xs text-slate-500 flex justify-between">
+            <span>© Теннис-лига, 2026</span>
+            <span>Сделано с любовью к теннису и к чистому коду</span>
+        </div>
+    </footer>
 
 </body>
 </html>

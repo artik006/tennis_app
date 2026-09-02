@@ -13,7 +13,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 # 🔥 ВАЖНО: правильный импорт для Render
-from backend.routers import auth, users, news, training, stats
+# Render запускает приложение из папки backend,
+# поэтому импорт должен быть БЕЗ префикса "backend."
+from routers import auth, users, news, training, stats
 
 app = FastAPI(title="Tennis Web App")
 
@@ -28,6 +30,7 @@ print("STATIC_DIR =", STATIC_DIR)
 templates = Jinja2Templates(directory=TEMPLATES_DIR)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
+# Подключение роутов
 app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(news.router)
